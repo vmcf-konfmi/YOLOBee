@@ -8,7 +8,8 @@
 ## Plan
  - Test model training
  - Cut videos per frames (openCV)
- - Create small annotations (annotation_model - ease up annotations in makesense.ai) 
+ - Create small annotations (annotation_model - ease up annotations in makesense.ai)
+   - make a simple function to divide images and annotations to train and test folders (70/30 %)
  - Set up training and validations set of videos
  - Create the "big" training set (with use of annotation_model)
  - Train s (small) model with YOLOv5 (either Collab, mazlik or metacentrum server)
