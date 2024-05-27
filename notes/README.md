@@ -1,7 +1,7 @@
 # Notes
 
 ## Files
- - [ ] create shared google drive
+ - [ x ] create shared google drive
  - [ ] annotation folder
  - [ ] publish training data?
 
