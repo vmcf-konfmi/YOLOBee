@@ -16,7 +16,7 @@
  - Decide what to compare (YOLOv5 vs YOLOv8 or model sizes)
 
 ### Short term
-
+- testing github
 - YOLOv5 testing
   - example use-case [video](https://youtu.be/gDoMYuyY_qw?si=-DlDqhvWlfU2M6Ac)
   - Ultralytics [YOLOv5 GitHub](https://github.com/ultralytics/yolov5)
