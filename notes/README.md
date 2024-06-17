@@ -1,7 +1,7 @@
 # Notes
 
 ## Files
- - [ ] create shared google drive
+ - [ c ] create shared google drive
  - [ ] annotation folder
  - [ ] publish training data?
 
@@ -24,3 +24,11 @@
 - Cut videos per frames
 - Create a small image subset (30 images max, something like every 30th frame)
 - Use [makesnes.ai](https://www.makesense.ai/) for annotations [video](https://www.loom.com/share/4d6ca48b639a4fd1a17ade04c73d935e?sid=16615971-76c9-4b12-9e96-19b169c64d53)
+
+
+#### Medium term
+- compare yolov5s, yolov5m, yolov5x
+- do the clagh augmetation
+   - retrain the network with the same dataset
+   - compare again the different yolo version
+- trace on frames the center on the bounding boxes and keep the coordinates of thoses center on a text files 
