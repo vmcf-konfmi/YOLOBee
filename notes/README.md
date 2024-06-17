@@ -5,6 +5,10 @@
  - [ ] annotation folder
  - [ ] publish training data?
 
+## Github
+ - [ ] develop my methode on a readme
+ - [ ] put the 5 first training on the gitHub
+
 ## Plan
  - Test model training
  - Cut videos per frames (openCV)
@@ -26,7 +30,7 @@
 - Use [makesnes.ai](https://www.makesense.ai/) for annotations [video](https://www.loom.com/share/4d6ca48b639a4fd1a17ade04c73d935e?sid=16615971-76c9-4b12-9e96-19b169c64d53)
 
 
-#### Medium term
+### Medium term
 - compare yolov5s, yolov5m, yolov5x
 - do the clagh augmetation
    - retrain the network with the same dataset
