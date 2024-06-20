@@ -32,7 +32,7 @@
 
 ### Medium term
 - compare yolov5s, yolov5m, yolov5x
-- do the clagh augmetation
+- do the clagh augmentation
    - retrain the network with the same dataset
    - compare again the different yolo version
 - trace on frames the center on the bounding boxes and keep the coordinates of thoses center on a text files 
