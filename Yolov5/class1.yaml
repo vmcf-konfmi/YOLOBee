@@ -5,4 +5,4 @@ val: ../train_data/images/val/   # val images (relative to 'path') 5000 images
 
 # Classes
 nc: 1  # number of classes
-names: ['an']  # class names
+names: ['bee']  # class names
