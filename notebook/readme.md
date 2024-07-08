@@ -1,1 +1,1 @@
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/[github/blob/chloejeannin/YOLOBee/example_notebooks/beesdetection.ipynb](https://github.com/chloejeannin/YOLOBee/blob/main/notebook/beesdetection.ipynb))
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)]([https://colab.research.google.com/](https://colab.research.google.com/github/chloejeannin/YOLOBee/blob/main/notebook/beesdetection.ipynb))
