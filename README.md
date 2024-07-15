@@ -11,20 +11,24 @@ The project I'm working on involves learning about bee's trajectories to underst
  
  ## Dependencies as Python version and package versions used (from Watermark)
 Python implementation: CPython
+
 Python version       : 3.10.12
+
 IPython version      : 7.34.0
 
 albumentations        : 1.4.8
+
 opencv-python-headless: not installed
+
 imgaug                : 0.4.0
+
 cv2                   : 4.8.0
+
 yolov5                : unknown
+
 torch                 : 2.3.0+cu121
  ## Links to other/reused/relevant projects - YOLOv5, Ultralytics, SciCount, SciAugment, Watermark, ...
- ## Workflow (separate issue)
- ## Results/Comparison (separate issue)
- ## Tracking with Trackmate (separate issue)
- ## Publish to Zenodo at the end (separate issue)
+
 ## Workflows
 To train the neural network for recognizing bees, some steps need to be followed.
 ### Data Preparation
@@ -54,3 +58,7 @@ After the training is over, you can launch the validation phase to know how well
 The last step is the detection. You can put the path of a video or of different frames that you want to detect. The parameters save-txt and save-conf create for each frame a text file that is composed of all the objects detected. They all respect the same format which is  [class] [x_coordinate] [y_coordinate] [width] [height] [confidence]. With those files, you can launch a new training using the detection, by correcting the mistakes of the algorithm.
 
 ### Tracking (optionally)
+
+ ## Results/Comparison (separate issue)
+ ## Tracking with Trackmate (separate issue)
+ ## Publish to Zenodo at the end (separate issue)
