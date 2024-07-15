@@ -1,5 +1,15 @@
 # YOLOBee
 
+## Introduction
+
+ 
+ ## Explanation which folder is for what
+ ## Dependencies as Python version and package versions (from Watermark)
+ ## Links to other/reused/relevant projects - YOLOv5, Ultralytics, SciCount, SciAugment, Watermark, ...
+ ## Workflow (separate issue)
+ ## Results/Comparison (separate issue)
+ ## Tracking with Trackmate (separate issue)
+ ## Publish to Zenodo at the end (separate issue)
 ## Workflows
 To train the neural network for recognizing bees, some steps need to be follow.
 ### Data Preparation
