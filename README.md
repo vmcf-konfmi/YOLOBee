@@ -9,7 +9,17 @@ The project I'm working on involves learning about bee's trajectories to underst
  ## Explanation which folder is for what
  The different folder beggining 
  
- ## Dependencies as Python version and package versions (from Watermark)
+ ## Dependencies as Python version and package versions used (from Watermark)
+Python implementation: CPython
+Python version       : 3.10.12
+IPython version      : 7.34.0
+
+albumentations        : 1.4.8
+opencv-python-headless: not installed
+imgaug                : 0.4.0
+cv2                   : 4.8.0
+yolov5                : unknown
+torch                 : 2.3.0+cu121
  ## Links to other/reused/relevant projects - YOLOv5, Ultralytics, SciCount, SciAugment, Watermark, ...
  ## Workflow (separate issue)
  ## Results/Comparison (separate issue)
