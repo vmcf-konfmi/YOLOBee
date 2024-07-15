@@ -2,10 +2,9 @@
 
 ## Introduction
 
-Bees are very important insects for biodiversity, as they pollinate plants. Pollination is a very important natural phenomenon for plants, enabling them to reproduce. This is the main reason why bees are so important on the planet. However, bee numbers are declining drastically every year. According to an article in the newspaper LesEchos written by Charlotte Meyer in 2022, "In Europe, around 40% of bee colonies have been decimated in less than ten years."  This is a very important figure, and one that has a direct impact on us. Indeed, the article also explains that "75% of the world's food production depends on pollinating insects." This is why we need to change things and encourage the development of bees. 
+Bees are essential insects for biodiversity, as they pollinate plants. Pollination is a vital natural phenomenon for plants, enabling them to reproduce. This is the main reason why bees are necessary on the planet. However, bee numbers are declining drastically every year. According to an article in the newspaper LesEchos written by Charlotte Meyer in 2022, "In Europe, around 40% of bee colonies have disappeared in less than ten years."  This is a huge number and one that has a direct impact on us. Indeed, the article also explains that "75% of the world's food production depends on pollinating insects." This is why we need to change things and encourage the development of bees. 
 
-The project I'm working on involves learning about bee trajectories to understand whether certain flowers are more attractive to bees than others.
-
+The project I'm working on involves learning about bee's trajectories to understand whether certain flowers are more attractive to bees than others. Thanks to this, we will understand better bees' behavior and their needs.
  
  ## Explanation which folder is for what
  ## Dependencies as Python version and package versions (from Watermark)
