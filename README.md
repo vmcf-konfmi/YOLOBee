@@ -1,9 +1,11 @@
 # YOLOBee
 
 ## Introduction
-	Les abeilles sont des insectes très importants pour la biodiversité car elles permettent la pollinisation des plantes. La pollinisation est un phénomène naturel très important pour les plantes car elle permet leur reproduction. C’est la raison majeur de l’importance des abeilles sur la planète. Cependant, le nombre d’abeilles diminue drastiquement chaque année. D’après un article sur le journal LesEchos écrit par Charlotte Meyer en 2022, « En Europe, environ 40 % des colonies d’abeilles ont été décimées en moins de dix ans. »  C’est un chiffre très important qui nous impact directement. En effet, l’article explique également que « 75 % de la production mondiale de nourriture dépend des insectes pollinisateurs. » C’est la raison pour laquelle nous nous devons de changer les choses et de favoriser le développement des abeilles. 
 
-	Le projet sur lequel je travaille consiste à connaître avec la trajectoire des abeilles pour comprendre si certaines fleures intéressent plus les abeilles que d’autres, avec un but de pouvoir planter, plus tard des fleurs possédant les caractéristiques favorisant le développement des abeilles.
+Bees are very important insects for biodiversity, as they pollinate plants. Pollination is a very important natural phenomenon for plants, enabling them to reproduce. This is the main reason why bees are so important on the planet. However, bee numbers are declining drastically every year. According to an article in the newspaper LesEchos written by Charlotte Meyer in 2022, "In Europe, around 40% of bee colonies have been decimated in less than ten years."  This is a very important figure, and one that has a direct impact on us. Indeed, the article also explains that "75% of the world's food production depends on pollinating insects." This is why we need to change things and encourage the development of bees. 
+
+The project I'm working on involves learning about bee trajectories to understand whether certain flowers are more attractive to bees than others.
+
  
  ## Explanation which folder is for what
  ## Dependencies as Python version and package versions (from Watermark)
