@@ -1,7 +1,9 @@
 # YOLOBee
 
 ## Introduction
+	Les abeilles sont des insectes très importants pour la biodiversité car elles permettent la pollinisation des plantes. La pollinisation est un phénomène naturel très important pour les plantes car elle permet leur reproduction. C’est la raison majeur de l’importance des abeilles sur la planète. Cependant, le nombre d’abeilles diminue drastiquement chaque année. D’après un article sur le journal LesEchos écrit par Charlotte Meyer en 2022, « En Europe, environ 40 % des colonies d’abeilles ont été décimées en moins de dix ans. »  C’est un chiffre très important qui nous impact directement. En effet, l’article explique également que « 75 % de la production mondiale de nourriture dépend des insectes pollinisateurs. » C’est la raison pour laquelle nous nous devons de changer les choses et de favoriser le développement des abeilles. 
 
+	Le projet sur lequel je travaille consiste à connaître avec la trajectoire des abeilles pour comprendre si certaines fleures intéressent plus les abeilles que d’autres, avec un but de pouvoir planter, plus tard des fleurs possédant les caractéristiques favorisant le développement des abeilles.
  
  ## Explanation which folder is for what
  ## Dependencies as Python version and package versions (from Watermark)
