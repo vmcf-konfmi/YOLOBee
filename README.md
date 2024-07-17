@@ -21,13 +21,15 @@ The training 05 were created to compare the results between the different models
 - Yolov5x is the large model of Yolov5 neural network. It is composed of 445 layers and 86 217 814 parameters.
 
 Usually, the more parameters the model has, the better the result will be but longest the training will take.
-The training has also augment his data set with frames coming from a new video where the flowers are yelo. The dataset is mixing frames from the different videos.
+The training has also augmented his data set with frames coming from a new video where the flowers are yellow. The dataset is mixing frames from the different videos.
 
-The *training 06* is doing the same has training 05 but with different augmentation. The aim was to see if using more augmentation, especially The brightest Contrast augmenation, will give better results. 
+The *training 06* is doing the same as training 05 but with different augmentation. The aim was to see if using more augmentation, especially The brightest Contrast augmentation, would give better results. 
 
-The *YOLOv8* folder is, in the same way as *training 06* and *training 05*, a comparison of the three models, yolov8s, yolov8m and yolov8x. Yolov8 is the latest algorithms of the Yolo families. 
+The *YOLOv8* folder is, in the same way as *training 06* and *training 05*, a comparison of the three models, yolov8s, yolov8m, and yolov8x. Yolov8 is the latest algorithm of the Yolo families. 
 
-The *notebook* folder contain different google coolab notebook which was necessary for the project. It uses 
+The *notebook* folder contains different Google Colab notebooks which was necessary for the project. It also contains an example of notebook *beesdetection* that can be directly opened by clicking on the google collab labels in the readme. This notebook is ready to be run and will do the augmentation, training, validation, and detection. The algorithm will use the files located in the *Yolov5* folder.
+
+*notes* is a folder that was used to identify the different tasks.
  
  ## Dependencies as Python version and package versions used (from Watermark)
 Python implementation: CPython
