@@ -54,7 +54,9 @@ torch                 : 2.3.0+cu121
 During this project, a lot of documentation and algorithms were used.
 
 Yolov5: https://github.com/ultralytics/yolov5
+
 augmentations: https://github.com/martinschatz-cz/SciAugment
+
 Ultralytics: https://github.com/ultralytics/ultralytics
 
 ## Workflows
