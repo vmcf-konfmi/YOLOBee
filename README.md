@@ -27,7 +27,13 @@ cv2                   : 4.8.0
 yolov5                : unknown
 
 torch                 : 2.3.0+cu121
- ## Links to other/reused/relevant projects - YOLOv5, Ultralytics, SciCount, SciAugment, Watermark, ...
+
+## Links to other/reused/relevant projects
+For this project a lot of documentation or files was used.
+
+for the augmentation: https://github.com/martinschatz-cz/SciAugment
+Yolov5: https://github.com/ultralytics/yolov5
+Ultralytics: https://github.com/ultralytics/ultralytics
 
 ## Workflows
 To train the neural network for recognizing bees, some steps need to be followed.
