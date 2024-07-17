@@ -16,9 +16,9 @@ The different folders were used to improve the recognition of the neural network
  - training 04 continues the training with the weights of 03 but with more pictures of flying bees because it was what the neural network had more difficulties recognizing.
 
 The training 05 were created to compare the results between the different models of YOLOv5:
--- Yolov5s is the small model of neural network. It is composed of 214 layers and 7 022 326 parameters.
--- Yolov5m is the medium model of neural network. It is composed of 291 layers and 20 871 318 parameters.
--- Yolov5x is the large model of neural network. It is composed of 445 layers and 86 217 814 parameters.
+---- Yolov5s is the small model of neural network. It is composed of 214 layers and 7 022 326 parameters.
+---- Yolov5m is the medium model of neural network. It is composed of 291 layers and 20 871 318 parameters.
+---- Yolov5x is the large model of neural network. It is composed of 445 layers and 86 217 814 parameters.
  
  ## Dependencies as Python version and package versions used (from Watermark)
 Python implementation: CPython
