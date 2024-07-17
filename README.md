@@ -6,8 +6,19 @@ Bees are essential insects for biodiversity, as they pollinate plants. Pollinati
 
 The project I'm working on involves learning about bee's trajectories to understand whether certain flowers are more attractive to bees than others. Thanks to this, we will understand better bees' behavior and their needs. The experimentation involves 20 3D-printed flowers arranged in lines of 5. The flowers are 3D-printed for us to control all the parameters, the color of each flower and their petals are exactly the same, only the height is changing. 
 
- ## Explanation which folder is for what
- The different folder beggining 
+ ## Explanation of the different folders
+The different folders were used to improve the recognition of the neural network, either by modifying the dataset or by changing the augmentations. They are all using the Yolov5 model. Results improve as the file number increases. Each folder contains the result of the training, the validation, and the detection on three little videos (except   training_01). The weights calculated at the end of the training are not included in the folders because they were too heavy. Until Training 04 the objective was only to improve bee recognition using yolov5m.
+
+ - Training 00 is the first training realized, which didn't go through to the end.
+ - Training 01 corresponds to the end of Training 00
+ - Training 02 continues the training of the neural network, keeping the last weights calculated at training 01 but with a new data set consisting of different images.
+ - Training 03 continues the training of the neural network, keeping the last weights calculated at training 02 but with a mix of the frames from the first dataset and the second
+ - training 04 continues the training with the weights of 03 but with more pictures of flying bees because it was what the neural network had more difficulties recognizing.
+
+The training 05 were created to compare the results between the different models of YOLOv5:
+-- Yolov5s is the small model of neural network. It is composed of 214 layers and 7 022 326 parameters.
+-- Yolov5m is the medium model of neural network. It is composed of 291 layers and 20 871 318 parameters.
+-- Yolov5x is the large model of neural network. It is composed of 445 layers and 86 217 814 parameters.
  
  ## Dependencies as Python version and package versions used (from Watermark)
 Python implementation: CPython
