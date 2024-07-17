@@ -50,6 +50,7 @@ yolov5                : unknown
 
 torch                 : 2.3.0+cu121
 
+
 ## Links to other/reused/relevant projects - YOLOv5, Ultralytics, SciCount, SciAugment, Watermark, ...
 During this project, a lot of documentation and algorithms were used.
 
