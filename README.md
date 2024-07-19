@@ -91,6 +91,13 @@ The last step is the detection. You can put the path of a video or of different 
 ### Tracking (optionally)
 
  ## Results/Comparison (separate issue)
+All the data we will analyze are in the folder validation of each training. In those folders, we will be interested, especially in the confusion matrix and the mAP50-90. The confusion matrix is a table that allows us to know the performance of an algorithm in machine learning. It classifies the output data into four categories: the true positive, the false positive, the true negative, and the false negative. We can see examples of confusion in the matrix below.
+
+  Training_00              |  Training_02              | Training_03               | Training_04
+:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------: 
+![](https://...Dark.png)   |  ![](https://...Ocean.png)
+
+ 
  ## Tracking with Trackmate (separate issue)
  ## Publish to Zenodo at the end (separate issue)
 
