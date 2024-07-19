@@ -99,7 +99,7 @@ All the data we will analyze are in the folder validation of each training. In t
 
 The first figure shows the confusion matrix for different Training. Training 03 and Training 04 have the exact confusion matrix. Training 00 has 94% true positives which is a good result for a first training. This high result can be explained because the dataset were consisted of easy frames. Easy frames contain bees on flowers but not a lot of bees flying. The second training was initialized with the weights of the last training but with a new set of data that only has bees flying. So the results were much more complicated because the neural network had difficulties detecting flying bees. Also, because the algorithm has a new set of data, it forgets the previous dataset. This explains why the second training only has 80%  true positives. Training 03 was a mix of the dataset used in the first training and the second training. This explains the better result. Training 04 had more frames than Training 03 but it did not increase the number of true positives.
 
-To understand the interest of Training 04 compare to Training 03, we can observe the mAP50 and mAP50-90 between the two trainings. The mAP50 
+To understand the interest of Training 04 compare to Training 03, we can observe the mAP50 and mAP50-90 between the two trainings. The mAP50 correspond to the mean average precision calculated at an intersection over union (IoU) threshold of 0.50.
 
  ## Tracking with Trackmate (separate issue)
  ## Publish to Zenodo at the end (separate issue)
