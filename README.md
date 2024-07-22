@@ -93,11 +93,14 @@ The last step is the detection. You can put the path of a video or of different 
  ## Results/Comparison (separate issue)
 All the data we will analyze are in the folder validation of each training. In those folders, we will be interested, especially in the confusion matrix and the mAP50-90. The confusion matrix is a table that allows us to know the performance of an algorithm in machine learning. It classifies the output data into four categories: the true positive, the false positive, the true negative, and the false negative. We can see examples of confusion in the matrix below.
 
-  Training_00              |  Training_02              | Training_03               | Training_04
-:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------: 
-![](https://...Dark.png)   |  ![](https://...Ocean.png)
+  Training_00              |  Training_02              | Training_03 and Training_04
+:-------------------------:|:-------------------------:|:-------------------------:
+![image](https://github.com/vmcf-konfmi/YOLOBee/blob/main/training_00/validation/confusion_matrix.png)   |  ![image](https://github.com/vmcf-konfmi/YOLOBee/blob/main/training_02/validation/confusion_matrix.png)*figure1* | ![image](https://github.com/vmcf-konfmi/YOLOBee/blob/main/training_03/validation/confusion_matrix.png)
 
- 
+The first figure shows the confusion matrix for different Training. Training 03 and Training 04 have the exact confusion matrix. Training 00 has 94% true positives which is a good result for a first training. This high result can be explained because the dataset were consisted of easy frames. Easy frames contain bees on flowers but not a lot of bees flying. The second training was initialized with the weights of the last training but with a new set of data that only has bees flying. So the results were much more complicated because the neural network had difficulties detecting flying bees. Also, because the algorithm has a new set of data, it forgets the previous dataset. This explains why the second training only has 80%  true positives. Training 03 was a mix of the dataset used in the first training and the second training. This explains the better result. Training 04 had more frames than Training 03 but it did not increase the number of true positives.
+
+To understand the interest of Training 04 compare to Training 03, we can observe the mAP50 and mAP50-90 between the two trainings. The mAP50 correspond to the mean average precision calculated at an intersection over union (IoU) threshold of 0.50. 
+
  ## Tracking with Trackmate (separate issue)
  ## Publish to Zenodo at the end (separate issue)
 
