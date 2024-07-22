@@ -99,7 +99,25 @@ All the data we will analyze are in the folder validation of each training. In t
 
 The first figure shows the confusion matrix for different Training. Training 03 and Training 04 have the exact confusion matrix. Training 00 has 94% true positives which is a good result for a first training. This high result can be explained because the dataset were consisted of easy frames. Easy frames contain bees on flowers but not a lot of bees flying. The second training was initialized with the weights of the last training but with a new set of data that only has bees flying. So the results were much more complicated because the neural network had difficulties detecting flying bees. Also, because the algorithm has a new set of data, it forgets the previous dataset. This explains why the second training only has 80%  true positives. Training 03 was a mix of the dataset used in the first training and the second training. This explains the better result. Training 04 had more frames than Training 03 but it did not increase the number of true positives.
 
-To understand the interest of Training 04 compare to Training 03, we can observe the mAP50 and mAP50-90 between the two trainings. The mAP50 correspond to the mean average precision calculated at an intersection over union (IoU) threshold of 0.50. 
+To understand the interest of Training 04 compared to Training 03, we can observe the mAP50 and mAP50-95 between the two trainings. The mAP50 corresponds to the mean average precision calculated at an intersection over union (IoU) threshold of 0.50. In the same way, map50-95 corresponds to the average of the mean average precision calculated at varying IoU thresholds, ranging from 0.50 to 0.95. This means that for different thresholds (going from 50 to 95 generally by 0.05 step), the algorithm calculates the mean average precision. To obtain the real value of map50-95, the average of the different thresholds is calculated. map50-95 gives a better vision of the algorithm and its performance.
+
+We can observe the performances of Training_03 and Training_04:
+|               | Training_03   | Training_04   |
+| ------------- | ------------- | ------------- |
+| mAP50         | 0.968         | 0.974         |
+| mAP50-95      | 0.661         | 0.709         |
+
+We can observe that Training 04 has better mAP values than training_03. The values are pretty good and the difference is not big enough to see a difference in the confusion matrix. However, thanks to the mAP values, we can see that the different frames added for the training_04 were useful. 
+
+Then, we can concetrate on the comparision of the diffenrent yolov5 models. Indeed, the training_05 and 06 are comparing the model s, m and x. Both training 05 and 06 owns the same frames at the beginning. The difference between the two training is the augmentation. Training 06 have more augmentations, so a bigger dataset for the training step. The result of the validation are exposed below.
+
+|               | Training_05_s   | Training_05_m   | Training_05_x   | Training_06_s   | Training_06_m   | Training_06_x   |
+| ------------- | --------------- | --------------- | --------------- | --------------- | --------------- | --------------- |
+| mAP50         | 0.974           | 0.975           | 0.974           | 0.98            | 0.981           | 0.981           |
+| mAP50-95      | 0.569           | 0.615           | 0.638           | 0.727           | 0.745           | 0.729           |
+
+Thanks to this value, we can see a huge improvement between training 05 and training 06. Indeed, between Training_05_s and Training_06_s, there is a 0,158 difference, which is a lot for the exact frames at the beginning of the algorithm. We can conclude that having a larger dataset helps bee tracking because the algorithms have more data to train on, but also, one of the augmentations that was added for this training is BrightContrast. For the bee's detection, this augmentation is essential because the frames have shadows and the bees are dark, so training the neural network to detect bees where contrast is missing is necessary.  We can see that training 06 does not always have better results than the other training. Indeed, it could be that the database is too small to change all the parameters. So maybe increasing my database could be an option for getting better results than training m and s. 
+
 
  ## Tracking with Trackmate (separate issue)
  ## Publish to Zenodo at the end (separate issue)
