@@ -118,9 +118,11 @@ Then, we can concetrate on the comparision of the diffenrent yolov5 models. Inde
 
 Thanks to this value, we can see a huge improvement between training 05 and training 06. Indeed, between Training_05_s and Training_06_s, there is a 0,158 difference, which is a lot for the exact frames at the beginning of the algorithm. We can conclude that having a larger dataset helps bee tracking because the algorithms have more data to train on, but also, one of the augmentations that was added for this training is BrightContrast. For the bee's detection, this augmentation is essential because the frames have shadows and the bees are dark, so training the neural network to detect bees where contrast is missing is necessary.  We can see that training 06 does not always have better results than the other training. Indeed, it could be that the database is too small to change all the parameters. So maybe increasing my database could be an option for getting better results than training m and s. 
 
+![image](https://github.com/user-attachments/assets/d33dac18-4c5b-4525-9610-81d813bae68b)
 
  ## Tracking with Trackmate
  After training the neural network to recognize bees, the objectif is to retrace their movement. To do this step, we used a software called trackmate. This software needs, for each frames, a mask to know where the bees are. All the masks are created with the file *masks_creation* in the folder notebook. This file is separated in two parts, Tracing the center on a frame and masks creation. The first part can draw on an image the movement of the bees on a video. The second is creating for each frame, a mask where the center of the bees are white on a black background. We also needed the time between two consecutive frames. This data was calculated in the *cut_frames* file which is located in the same folder than *masks_detection.
+
 
  
  ## Publish to Zenodo at the end (separate issue)
