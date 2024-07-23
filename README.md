@@ -109,7 +109,7 @@ We can observe the performances of Training_03 and Training_04:
 
 We can observe that Training 04 has better mAP values than training_03. The values are pretty good and the difference is not big enough to see a difference in the confusion matrix. However, thanks to the mAP values, we can see that the different frames added for the training_04 were useful. 
 
-Then, we can concetrate on the comparision of the diffenrent yolov5 models. Indeed, the training_05 and 06 are comparing the model s, m and x. Both training 05 and 06 owns the same frames at the beginning. The difference between the two training is the augmentation. Training 06 have more augmentations, so a bigger dataset for the training step. The result of the validation are exposed below.
+Then, we can concetrate on the comparision of the diffenrent yolov5 models. Indeed, the training_05 and 06 are comparing the model s, m and x. Both training 05 and 06 owns the same frames at the beginning. The difference between the two training is the augmentation. Training 06 have more augmentations, so a bigger dataset for the training step. The result of the validation are exposed below. 
 
 |               | Training_05_s   | Training_05_m   | Training_05_x   | Training_06_s   | Training_06_m   | Training_06_x   |
 | ------------- | --------------- | --------------- | --------------- | --------------- | --------------- | --------------- |
@@ -118,7 +118,15 @@ Then, we can concetrate on the comparision of the diffenrent yolov5 models. Inde
 
 Thanks to this value, we can see a huge improvement between training 05 and training 06. Indeed, between Training_05_s and Training_06_s, there is a 0,158 difference, which is a lot for the exact frames at the beginning of the algorithm. We can conclude that having a larger dataset helps bee tracking because the algorithms have more data to train on, but also, one of the augmentations that was added for this training is BrightContrast. For the bee's detection, this augmentation is essential because the frames have shadows and the bees are dark, so training the neural network to detect bees where contrast is missing is necessary.  We can see that training 06 does not always have better results than the other training. Indeed, it could be that the database is too small to change all the parameters. So maybe increasing my database could be an option for getting better results than training m and s. 
 
-To continue, we can observe the difference between the yolov5 and yolov8 model. The latest version of Ultralytics is the Yolov8. 
+
+
+
+CPU? GPU? tout le temps besoin de GPU mais pour x besoin de 2 GPU sinon trop long
+
+
+
+
+To continue, we can observe the difference between the yolov5 and yolov8 models. The latest version of Ultralytics is the Yolov8, which went out in 2023, while Yolov5 came out in 2020. Between the two versions, the results are practically the same, even if Yolov8 seems a little less efficient for the m and x models. But the results are still pretty good. Yolov8 is a larger neural network, so maybe the dataset is not big enough. It is supposed to be better but slower because of the size of the neural network.
 
 After training the neural network, we wanted to observe the trajectory of the bees. Thanks to the detection, we could retrace the position of each bee in each frame. In the images below, we can see all the positions taken by the bees in the different videos located in the folder *videos*.
 
