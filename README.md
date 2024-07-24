@@ -69,7 +69,7 @@ Then, the frames need to be annotated. Indeed, to learn, the neural network need
 
 ### Training
 The next step is the training. This will train the neural network to recognize bees on images. 
-To launch a training it is better to be connected to a GPU, because it could not work or be very long using only the RAM. The training is launched only by one code line (beginning with *!python train.py* ...). In this line of code, a lot of parameters can be changed if the user wants something specific (you can find them all on the Ultralytics website). However, some parameters need to remain, like img, batch, epochs, data, and weights. 
+To launch a training it is better to be connected to a GPU, because it could not work or be very long using only the RAM of the system. The training is launched only by one code line (beginning with *!python train.py* ...). In this line of code, a lot of parameters can be changed if the user wants something specific (you can find them all on the Ultralytics website). However, some parameters need to remain, like img, batch, epochs, data, and weights. 
 
 - **img** is the size of the different images used for the training. Before going into the model, the images are sized to the dimension that has been put in parameters. If little objects want to be spotted, a higher resolution is necessary, so a bigger img.
 
@@ -95,7 +95,7 @@ All the data we will analyze are in the folder validation of each training. In t
 
   Training_00              |  Training_02              | Training_03 and Training_04
 :-------------------------:|:-------------------------:|:-------------------------:
-![image](https://github.com/vmcf-konfmi/YOLOBee/blob/main/training_00/validation/confusion_matrix.png)   |  ![image](https://github.com/vmcf-konfmi/YOLOBee/blob/main/training_02/validation/confusion_matrix.png)*figure1* | ![image](https://github.com/vmcf-konfmi/YOLOBee/blob/main/training_03/validation/confusion_matrix.png)
+![image](https://github.com/vmcf-konfmi/YOLOBee/blob/main/training_00/validation/confusion_matrix.png)   |  ![image](https://github.com/vmcf-konfmi/YOLOBee/blob/main/training_02/validation/confusion_matrix.png)*figure 1* | ![image](https://github.com/vmcf-konfmi/YOLOBee/blob/main/training_03/validation/confusion_matrix.png)
 
 The first figure shows the confusion matrix for different Training. Training 03 and Training 04 have the exact confusion matrix. Training 00 has 94% true positives which is a good result for a first training. This high result can be explained because the dataset were consisted of easy frames. Easy frames contain bees on flowers but not a lot of bees flying. The second training was initialized with the weights of the last training but with a new set of data that only has bees flying. So the results were much more complicated because the neural network had difficulties detecting flying bees. Also, because the algorithm has a new set of data, it forgets the previous dataset. This explains why the second training only has 80%  true positives. Training 03 was a mix of the dataset used in the first training and the second training. This explains the better result. Training 04 had more frames than Training 03 but it did not increase the number of true positives.
 
@@ -118,13 +118,7 @@ Then, we can concetrate on the comparision of the diffenrent yolov5 models. Inde
 
 Thanks to this value, we can see a huge improvement between training 05 and training 06. Indeed, between Training_05_s and Training_06_s, there is a 0,158 difference, which is a lot for the exact frames at the beginning of the algorithm. We can conclude that having a larger dataset helps bee tracking because the algorithms have more data to train on, but also, one of the augmentations that was added for this training is BrightContrast. For the bee's detection, this augmentation is essential because the frames have shadows and the bees are dark, so training the neural network to detect bees where contrast is missing is necessary.  We can see that training 06 does not always have better results than the other training. Indeed, it could be that the database is too small to change all the parameters. So maybe increasing my database could be an option for getting better results than training m and s. 
 
-
-
-
-CPU? GPU? tout le temps besoin de GPU mais pour x besoin de 2 GPU sinon trop long
-
-
-
+To run a training, a connection to the GPU is necessary because the CPU is not powerful enough. Indeed, the RAM of the system in Google Collab is 12,7 Giga Byte and is under the minimum resources for the training. This is why a GPU is necessary. While comparing the different models, we noticed a big time difference during the training, between the size of the model used and the size of the dataset. For training x, it is better to use two GPUs to ensure the end of the training and that it will not take too much time. 
 
 To continue, we can observe the difference between the yolov5 and yolov8 models. The latest version of Ultralytics is the Yolov8, which went out in 2023, while Yolov5 came out in 2020. Between the two versions, the results are practically the same, even if Yolov8 seems a little less efficient for the m and x models. But the results are still pretty good. Yolov8 is a larger neural network, so maybe the dataset is not big enough. It is supposed to be better but slower because of the size of the neural network.
 
@@ -132,7 +126,7 @@ After training the neural network, we wanted to observe the trajectory of the be
 
   video 1              |  video 2              | video 3
 :---------------------:|:---------------------:|:-------------------------:
-![image](https://github.com/user-attachments/assets/d33dac18-4c5b-4525-9610-81d813bae68b)|  ![image](https://github.com/user-attachments/assets/771122b1-28ac-4b1d-98ec-c2b79c173290)*figure2* | ![image](https://github.com/user-attachments/assets/5520dd19-b6ea-4b06-94d3-3bcd2efbeb38)
+![image](https://github.com/user-attachments/assets/d33dac18-4c5b-4525-9610-81d813bae68b)|  ![image](https://github.com/user-attachments/assets/771122b1-28ac-4b1d-98ec-c2b79c173290)*figure 2* | ![image](https://github.com/user-attachments/assets/5520dd19-b6ea-4b06-94d3-3bcd2efbeb38)
 
 What conclusion to that?
 
@@ -141,7 +135,10 @@ What conclusion to that?
 
 
  ## Tracking with Trackmate
- After training the neural network to recognize bees, the objectif is to retrace their movement. To do this step, we used a software called trackmate. This software needs, for each frames, a mask to know where the bees are. All the masks are created with the file *masks_creation* in the folder notebook. This file is separated in two parts, Tracing the center on a frame and masks creation. The first part can draw on an image the movement of the bees on a video. The second is creating for each frame, a mask where the center of the bees are white on a black background. We also needed the time between two consecutive frames. This data was calculated in the *cut_frames* file which is located in the same folder than *masks_detection*.
+ After training the neural network to recognize bees, the objectif is to retrace their movement. To do this step, we used a software called trackmate. This software needs, for each frames, a mask to know where the bees are. All the masks are created with the file *masks_creation* in the folder notebook. This file is separated in two parts, Tracing the center on a frame and masks creation. The first part can draw on an image the movement of the bees on a video. The second is creating for each frame, a mask where the center of the bees are white on a black background. We also needed the time between two consecutive frames. This data was calculated in the *cut_frames* file which is located in the same folder than *masks_detection*. The 
+
+ [![Watch the video](![image](https://github.com/user-attachments/assets/4229fafa-8a5a-4b25-b454-7f02f23cd5ef)
+)
 
 
  
