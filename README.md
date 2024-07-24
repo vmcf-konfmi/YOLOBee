@@ -137,7 +137,7 @@ What conclusion to that?
  ## Tracking with Trackmate
  After training the neural network to recognize bees, the objectif is to retrace their movement. To do this step, we used a software called trackmate. This software needs, for each frames, a mask to know where the bees are. All the masks are created with the file *masks_creation* in the folder notebook. This file is separated in two parts, Tracing the center on a frame and masks creation. The first part can draw on an image the movement of the bees on a video. The second is creating for each frame, a mask where the center of the bees are white on a black background. We also needed the time between two consecutive frames. This data was calculated in the *cut_frames* file which is located in the same folder than *masks_detection*. The 
 
- [![Watch the video](![image](https://github.com/user-attachments/assets/4229fafa-8a5a-4b25-b454-7f02f23cd5ef)
+ [![Watch the video](![image](https://github.com/chloejeannin/YOLOBee/blob/main/videos/TrackMate%20capture%20of%20video_2_training_06_x_1_counts_1.avi)
 )
 
 
