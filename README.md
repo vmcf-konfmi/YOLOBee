@@ -136,14 +136,12 @@ After training the neural network to recognize bees, the objective is to retrace
 
 https://github.com/user-attachments/assets/4846c61f-3bca-4d2d-a753-282aa09ea5f9
 
-We can see in this video that the bees are pretty well detected even if sometimes the algorithm does not recognize them. This could be because of the shadow or the flower sick. Indeed, both of them decrease the contrast between bees and the background, making the detection more complicated. This could be interesting either to change the color of the sick to a brighter color or to increase the dataset with more frames of bees in shadow or in front of a flower stick.
-With this detection, we executed again the tracking step and the result was better. Indeed, we can see the result below.
+We can see in this video that the bees are pretty well detected even if sometimes the algorithm does not recognize them. This could be because of the shadow or the flower sick. Indeed, both decrease the contrast between bees and the background, making the detection more complicated. This could be interesting either to change the color of the sick to a brighter color or to increase the dataset with more frames of bees in shadow or in front of a flower stick.
+With this detection, we did the tracking step again and the result was better. We can see the result below.
 
-https://github.com/user-attachments/assets/dbdcbc74-d3a8-4de6-b6ff-51545fead4ba
+https://github.com/user-attachments/assets/5a769c93-d469-4d00-8f1d-b32abe34b3a1
 
-We can see the 
-
-Some parameters were adjust to have a better result like the gap-closing max frame gap which correspond to the maximal number of frame where, if a bee have not been detect, a new track is created.
+The bees correspond to the white square and the line corresponds to their mouvement. The color of the line corresponds to the speed of the bee. The Warmer the color is, the faster the bees will move. This tracking can let us see the movement of each bee, to better understand on which flower bees are stopping. Unfortunately, the algorithm is not completely efficient because we can see at 7 seconds of the detection video that 2 bees are switching their flowers. However, we can't see it in the second video. This is because the algorithm has difficulties detecting the bees which are close to each other.
 
  
  ## Publish to Zenodo at the end (separate issue)
