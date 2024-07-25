@@ -30,6 +30,8 @@ The *YOLOv8* folder is, in the same way as *training 06* and *training 05*, a co
 The *notebook* folder contains different Google Colab notebooks which was necessary for the project. It also contains an example of notebook *beesdetection* that can be directly opened by clicking on the google collab labels in the readme. This notebook is ready to be run and will do the augmentation, training, validation, and detection. The algorithm will use the files located in the *Yolov5* folder.
 
 *notes* is a folder that was used to identify the different tasks.
+
+*videos* got three videos which are use for the detection step.
  
  ## Dependencies as Python version and package versions used (from Watermark)
 Python implementation: CPython
