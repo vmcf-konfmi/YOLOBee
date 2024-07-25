@@ -4,7 +4,7 @@
 
 Bees are essential insects for biodiversity, as they pollinate plants. Pollination is a vital natural phenomenon for plants, enabling them to reproduce. This is the main reason why bees are necessary on the planet. However, bee numbers are declining drastically every year. According to an article in the newspaper LesEchos written by Charlotte Meyer in 2022, "In Europe, around 40% of bee colonies have disappeared in less than ten years."  This is a huge number and one that has a direct impact on us. Indeed, the article also explains that "75% of the world's food production depends on pollinating insects." This is why we need to change things and encourage the development of bees. 
 
-The project I'm working on involves learning about bee's trajectories to understand whether certain flowers are more attractive to bees than others. Thanks to this, we will understand better bees' behavior and their needs. The experimentation involves 20 3D-printed flowers arranged in lines of 5. The flowers are 3D-printed for us to control all the parameters, the color of each flower and their petals are exactly the same, only the height is changing. 
+The project I'm working on involves learning about bee's trajectories to understand whether certain flowers are more attractive to bees than others. Thanks to this, we will understand better bees' behavior and their needs. The experimentation involves 20 3D-printed flowers arranged in lines of 5. The flowers are 3D-printed to enable the control of all the parameters: for the flowers to be the same color and shape but diversify their height. 
 
  ## Explanation of the different folders
 The different folders were used to improve the recognition of the neural network, either by modifying the dataset or by changing the augmentations. They are all using the Yolov5 model. Results improve as the file number increases. Each folder contains the result of the training, the validation, and the detection on three little videos (except   *training_01*). The weights calculated at the end of the training are not included in the folders because they were too heavy. Until *Training 04* the objective was only to improve bee recognition using yolov5m.
@@ -30,6 +30,8 @@ The *YOLOv8* folder is, in the same way as *training 06* and *training 05*, a co
 The *notebook* folder contains different Google Colab notebooks which was necessary for the project. It also contains an example of notebook *beesdetection* that can be directly opened by clicking on the google collab labels in the readme. This notebook is ready to be run and will do the augmentation, training, validation, and detection. The algorithm will use the files located in the *Yolov5* folder.
 
 *notes* is a folder that was used to identify the different tasks.
+
+*videos* got three videos which are use for the detection step.
  
  ## Dependencies as Python version and package versions used (from Watermark)
 Python implementation: CPython
@@ -95,7 +97,7 @@ All the data we will analyze are in the folder validation of each training. In t
 
   Training_00              |  Training_02              | Training_03 and Training_04
 :-------------------------:|:-------------------------:|:-------------------------:
-![image](https://github.com/vmcf-konfmi/YOLOBee/blob/main/training_00/validation/confusion_matrix.png)   |  ![image](https://github.com/vmcf-konfmi/YOLOBee/blob/main/training_02/validation/confusion_matrix.png)*figure 1* | ![image](https://github.com/vmcf-konfmi/YOLOBee/blob/main/training_03/validation/confusion_matrix.png)
+![image](https://github.com/vmcf-konfmi/YOLOBee/blob/main/training_00/validation/confusion_matrix.png)   |  ![image](https://github.com/vmcf-konfmi/YOLOBee/blob/main/training_02/validation/confusion_matrix.png) | ![image](https://github.com/vmcf-konfmi/YOLOBee/blob/main/training_03/validation/confusion_matrix.png)
 
 The first figure shows the confusion matrix for different Training. Training 03 and Training 04 have the exact confusion matrix. Training 00 has 94% true positives which is a good result for a first training. This high result can be explained because the dataset were consisted of easy frames. Easy frames contain bees on flowers but not a lot of bees flying. The second training was initialized with the weights of the last training but with a new set of data that only has bees flying. So the results were much more complicated because the neural network had difficulties detecting flying bees. Also, because the algorithm has a new set of data, it forgets the previous dataset. This explains why the second training only has 80%  true positives. Training 03 was a mix of the dataset used in the first training and the second training. This explains the better result. Training 04 had more frames than Training 03 but it did not increase the number of true positives.
 
@@ -126,20 +128,22 @@ After training the neural network, we wanted to observe the trajectory of the be
 
   video 1              |  video 2              | video 3
 :---------------------:|:---------------------:|:-------------------------:
-![image](https://github.com/user-attachments/assets/d33dac18-4c5b-4525-9610-81d813bae68b)|  ![image](https://github.com/user-attachments/assets/771122b1-28ac-4b1d-98ec-c2b79c173290)*figure 2* | ![image](https://github.com/user-attachments/assets/5520dd19-b6ea-4b06-94d3-3bcd2efbeb38)
+![image](https://github.com/user-attachments/assets/d33dac18-4c5b-4525-9610-81d813bae68b)|  ![image](https://github.com/user-attachments/assets/771122b1-28ac-4b1d-98ec-c2b79c173290) | ![image](https://github.com/user-attachments/assets/5520dd19-b6ea-4b06-94d3-3bcd2efbeb38)
 
-What conclusion to that?
-
-
-
+With those pictures, we can see that the tracking seems to work. But we can not conclude anything with these three short videos. Now the detection is working, it could be launched on a longer video to have realistic results. 
 
 
  ## Tracking with Trackmate
- After training the neural network to recognize bees, the objectif is to retrace their movement. To do this step, we used a software called trackmate. This software needs, for each frames, a mask to know where the bees are. All the masks are created with the file *masks_creation* in the folder notebook. This file is separated in two parts, Tracing the center on a frame and masks creation. The first part can draw on an image the movement of the bees on a video. The second is creating for each frame, a mask where the center of the bees are white on a black background. We also needed the time between two consecutive frames. This data was calculated in the *cut_frames* file which is located in the same folder than *masks_detection*. The 
+After training the neural network to recognize bees, the objective is to retrace their movement. To do this step, we used a software called trackmate. This software needs for each frame, a mask to know where the bees are. All the masks are created with the file *masks_creation* in the folder notebook. This file contains the coordinates of the bounding boxes created in the detection step. This file is separated into two parts, tracing the center on a frame and mask creation. The first part can draw on an image of the movement of the bees on a video. The second is creating for each frame, a mask where the center of the bees is white on a black background. We also needed the time between two consecutive frames. This data was calculated in the *cut_frames* file, located in the same folder as *masks_detection*. The first result was not satisfying because the bee's detection was not good enough to track the movement of each bee. We modified the detection of the video *video_2_bees_extract_1.mov* by lowering the confidence threshold from 0.5 (by default) to 0.25. Decreasing the threshold allowed the detection of more bees. The video created by the detection is below.
 
- [![Watch the video](![image](https://github.com/user-attachments/assets/4229fafa-8a5a-4b25-b454-7f02f23cd5ef)
-)
+https://github.com/user-attachments/assets/4846c61f-3bca-4d2d-a753-282aa09ea5f9
 
+We can see in this video that the bees are pretty well detected even if sometimes the algorithm does not recognize them. This could be because of the shadow or the flower sick. Indeed, both decrease the contrast between bees and the background, making the detection more complicated. This could be interesting either to change the color of the sick to a brighter color or to increase the dataset with more frames of bees in shadow or in front of a flower stick.
+With this detection, we did the tracking step again and the result was better. We can see the result below.
+
+https://github.com/user-attachments/assets/5a769c93-d469-4d00-8f1d-b32abe34b3a1
+
+The bees correspond to the white square and the line corresponds to their mouvement. The color of the line corresponds to the speed of the bee. The Warmer the color is, the faster the bees will move. This tracking can let us see the movement of each bee, to better understand on which flower bees are stopping. Unfortunately, the algorithm is not completely efficient because we can see at 7 seconds of the detection video that 2 bees are switching their flowers. However, we can't see it in the second video. This is because the algorithm has difficulties detecting the bees which are close to each other.
 
  
  ## Publish to Zenodo at the end (separate issue)
