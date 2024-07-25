@@ -42,13 +42,13 @@ IPython version      : 7.34.0
 
 albumentations        : 1.4.8
 
-opencv-python-headless: not installed
+opencv-python-headless: not installed (but needed for SciAugment)
 
 imgaug                : 0.4.0
 
 cv2                   : 4.8.0
 
-yolov5                : unknown
+yolov5                : 7.0.13 (based on PIP)
 
 torch                 : 2.3.0+cu121
 
@@ -65,13 +65,13 @@ Ultralytics: https://github.com/ultralytics/ultralytics
 ## Workflows
 To train the neural network for recognizing bees, some steps need to be followed.
 ### Data Preparation
-Firstly, for the neural network to learn, it needs a dataset with pictures of the bees. For it to work correctly, it needs at least 30 frames in input. The best dataset will be composed of different frames with bees buzzing in the flowers or bees flying. It will enable the algorithm to recognize a bee in any condition. If you want to train the neural network based on a video, you will need to cut frames directly from the video. For this, you can use the document called cut_frames (which is in the folder notebook), which will pick some of the frames inside the video you have entered in input. You can change the number of frames you need inside the algorithm, but the default parameters will cut the video into 30 frames
+Firstly, for the neural network to learn, it needs a dataset with pictures of the bees. For it to work correctly, it needs at least 30 frames in input. The best dataset will be composed of different frames with bees buzzing in the flowers or bees flying. It will enable the algorithm to recognize a bee in any condition. If you want to train the neural network based on a video, you will need to cut frames directly from the video. For this, you can use the document called `cut_frames` (which is in the folder notebook), which will pick some of the frames inside the video you have entered in input. You can change the number of frames you need inside the algorithm, but the default parameters will cut the video into 30 frames
 
-Then, the frames need to be annotated. Indeed, to learn, the neural network needs to know what corresponds to a bee. For this step, you can use the software named makesense.ai. It lets you annotate your frames in a very simple way. If you do not want to create your dataset, you can use the file named frames_04+frames_2.zip in the Yolov5 folder. This file includes the different frames and the YOLO annotations. It can be used, by default, in the notebook beesdetection.ipynb, which is located in the folder notebook. If you have created your data set you will need to change the path of the data set directory in the notebook. Then, the augmentation will generate new images, based on the frames of the data set. Having more images will allow the neural network to have more images to train. In the notebook, only the Default augmentation is done.
+Then, the frames need to be annotated. Indeed, to learn, the neural network needs to know what corresponds to a bee. For this step, you can use the software named [makesense.ai](https://www.makesense.ai/). It lets you annotate your frames in a very simple way. If you do not want to create your dataset, you can use the file named `frames_04+frames_2.zip` in the Yolov5 folder. This file includes the different frames and the YOLO annotations. It can be used, by default, in the notebook `beesdetection.ipynb`, which is located in the folder notebook. If you have created your data set you will need to change the path of the data set directory in the notebook. Then, the augmentation will generate new images, based on the frames of the data set. Having more images will allow the neural network to have more images to train. In the notebook, only the Default augmentation is done.
 
 ### Training
 The next step is the training. This will train the neural network to recognize bees on images. 
-To launch a training it is better to be connected to a GPU, because it could not work or be very long using only the RAM of the system. The training is launched only by one code line (beginning with *!python train.py* ...). In this line of code, a lot of parameters can be changed if the user wants something specific (you can find them all on the Ultralytics website). However, some parameters need to remain, like img, batch, epochs, data, and weights. 
+To launch a training it is better to be connected to a GPU, because it could not work or be very long using only the RAM of the system. The training is launched only by one code line (beginning with `!python train.py` ...). In this line of code, a lot of parameters can be changed if the user wants something specific (you can find them all on the Ultralytics website). However, some parameters need to remain, like img, batch, epochs, data, and weights. 
 
 - **img** is the size of the different images used for the training. Before going into the model, the images are sized to the dimension that has been put in parameters. If little objects want to be spotted, a higher resolution is necessary, so a bigger img.
 
@@ -89,8 +89,6 @@ After the training is over, you can launch the validation phase to know how well
 
 ### Detecting
 The last step is the detection. You can put the path of a video or of different frames that you want to detect. The parameters save-txt and save-conf create for each frame a text file that is composed of all the objects detected. They all respect the same format which is  [class] [x_coordinate] [y_coordinate] [width] [height] [confidence]. With those files, you can launch a new training using the detection, by correcting the mistakes of the algorithm.
-
-### Tracking (optionally)
 
  ## Results/Comparison (separate issue)
 All the data we will analyze are in the folder validation of each training. In those folders, we will be interested, especially in the confusion matrix and the mAP50-90. The confusion matrix is a table that allows us to know the performance of an algorithm in machine learning. It classifies the output data into four categories: the true positive, the false positive, the true negative, and the false negative. We can see examples of confusion in the matrix below.
@@ -111,7 +109,7 @@ We can observe the performances of Training_03 and Training_04:
 
 We can observe that Training 04 has better mAP values than training_03. The values are pretty good and the difference is not big enough to see a difference in the confusion matrix. However, thanks to the mAP values, we can see that the different frames added for the training_04 were useful. 
 
-Then, we can concetrate on the comparision of the diffenrent yolov5 models. Indeed, the training_05 and 06 are comparing the model s, m and x. Both training 05 and 06 owns the same frames at the beginning. The difference between the two training is the augmentation. Training 06 have more augmentations, so a bigger dataset for the training step. The result of the validation are exposed below. 
+Then, we can concetrate on the comparision of the diffenrent yolov5 models. Indeed, the training_05 and 06 are comparing the model s, m and x. Both training 05 and 06 owns the same frames at the beginning. The difference between the two training is the augmentation. Training 06 have more augmentations, so a bigger dataset for the training step. The result of the validation are exposed below. The training ran until an early stop was applied. You can find specific number of epochs for each model size in the Jupyter Notebooks.  
 
 |               | Training_05_s   | Training_05_m   | Training_05_x   | Training_06_s   | Training_06_m   | Training_06_x   |
 | ------------- | --------------- | --------------- | --------------- | --------------- | --------------- | --------------- |
@@ -122,7 +120,7 @@ Thanks to this value, we can see a huge improvement between training 05 and trai
 
 To run a training, a connection to the GPU is necessary because the CPU is not powerful enough. Indeed, the RAM of the system in Google Collab is 12,7 Giga Byte and is under the minimum resources for the training. This is why a GPU is necessary. While comparing the different models, we noticed a big time difference during the training, between the size of the model used and the size of the dataset. For training x, it is better to use two GPUs to ensure the end of the training and that it will not take too much time. 
 
-To continue, we can observe the difference between the yolov5 and yolov8 models. The latest version of Ultralytics is the Yolov8, which went out in 2023, while Yolov5 came out in 2020. Between the two versions, the results are practically the same, even if Yolov8 seems a little less efficient for the m and x models. But the results are still pretty good. Yolov8 is a larger neural network, so maybe the dataset is not big enough. It is supposed to be better but slower because of the size of the neural network.
+To continue, we can observe the difference between the yolov5 and yolov8 models. The latest version of Ultralytics is the Yolov8, which went out in 2023, while Yolov5 came out in 2020. Between the two versions, the results are practically the same, even if Yolov8 seems a little less efficient for the m and x models. But the results are still pretty good. Yolov8 is a larger neural network, so maybe the dataset is not big enough. It is supposed to be better but slower because of the size of the neural network. You can find more details in the Jupyter Notebooks contained in the YOLOv5 and YOLOv8 folders.
 
 After training the neural network, we wanted to observe the trajectory of the bees. Thanks to the detection, we could retrace the position of each bee in each frame. In the images below, we can see all the positions taken by the bees in the different videos located in the folder *videos*.
 
@@ -134,7 +132,7 @@ With those pictures, we can see that the tracking seems to work. But we can not 
 
 
  ## Tracking with Trackmate
-After training the neural network to recognize bees, the objective is to retrace their movement. To do this step, we used a software called trackmate. This software needs for each frame, a mask to know where the bees are. All the masks are created with the file *masks_creation* in the folder notebook. This file contains the coordinates of the bounding boxes created in the detection step. This file is separated into two parts, tracing the center on a frame and mask creation. The first part can draw on an image of the movement of the bees on a video. The second is creating for each frame, a mask where the center of the bees is white on a black background. We also needed the time between two consecutive frames. This data was calculated in the *cut_frames* file, located in the same folder as *masks_detection*. The first result was not satisfying because the bee's detection was not good enough to track the movement of each bee. We modified the detection of the video *video_2_bees_extract_1.mov* by lowering the confidence threshold from 0.5 (by default) to 0.25. Decreasing the threshold allowed the detection of more bees. The video created by the detection is below.
+After training the neural network to recognize bees, the objective is to retrace their movement. To do this step, we used a software called trackmate. This software needs for each frame, a mask to know where the bees are. All the masks are created with the file `masks_creation` in the folder notebook. This file contains the coordinates of the bounding boxes created in the detection step. This file is separated into two parts, tracing the center on a frame and mask creation. The first part can draw on an image of the movement of the bees on a video. The second is creating for each frame, a mask where the center of the bees is white on a black background. We also needed the time between two consecutive frames. This data was calculated in the `cut_frames` file, located in the same folder as `masks_detection`. The first result was not satisfying because the bee's detection was not good enough to track the movement of each bee. We modified the detection of the video `video_2_bees_extract_1.mov` by lowering the confidence threshold from 0.5 (by default) to 0.25. Decreasing the threshold allowed the detection of more bees. The video created by the detection is below.
 
 https://github.com/user-attachments/assets/4846c61f-3bca-4d2d-a753-282aa09ea5f9
 
@@ -143,11 +141,11 @@ With this detection, we did the tracking step again and the result was better. W
 
 https://github.com/user-attachments/assets/5a769c93-d469-4d00-8f1d-b32abe34b3a1
 
-The bees correspond to the white square and the line corresponds to their mouvement. The color of the line corresponds to the speed of the bee. The Warmer the color is, the faster the bees will move. This tracking can let us see the movement of each bee, to better understand on which flower bees are stopping. Unfortunately, the algorithm is not completely efficient because we can see at 7 seconds of the detection video that 2 bees are switching their flowers. However, we can't see it in the second video. This is because the algorithm has difficulties detecting the bees which are close to each other.
+The bees correspond to the white square and the line corresponds to their movement. The color of the line corresponds to the speed of the bee. The Warmer the color is, the faster the bees will move. This tracking can let us see the movement of each bee, to better understand on which flower bees are stopping. Unfortunately, the algorithm is not completely efficient because we can see at 7 seconds of the detection video that 2 bees are switching their flowers. However, we can't see it in the second video. This is because the algorithm has difficulties detecting the bees which are close to each other.
 
  
- ## Publish to Zenodo at the end (separate issue)
+## Zenodo Repository
 
 ## Acknowledgements
 
-*Computational resources and consultations were provided by the the Vinicna Microscopy Core Facility co-financed by the Czech-BioImaging large RI project  LM2023050. Additional computational resources were provided by the e-INFRA CZ project (ID:90254), supported by the Ministry of Education, Youth and Sports of the Czech Republic.*
+*Computational resources and consultations were provided by the Vinicna Microscopy Core Facility co-financed by the Czech-BioImaging large RI project  LM2023050. Additional computational resources were provided by the e-INFRA CZ project (ID:90254), supported by the Ministry of Education, Youth and Sports of the Czech Republic.*
