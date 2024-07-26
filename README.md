@@ -1,3 +1,4 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.12919127.svg)](https://doi.org/10.5281/zenodo.12919127)
 # YOLOBee
 
 ## Introduction
@@ -145,6 +146,21 @@ The bees correspond to the white square and the line corresponds to their moveme
 
  
 ## Zenodo Repository
+
+Jeannin, C., & Schätz, M. (2024). vmcf-konfmi/YOLOBee: YOLOBee 1.0.0 (v1.0.0). Zenodo. [https://doi.org/10.5281/zenodo.12919127](https://doi.org/10.5281/zenodo.12919127)
+
+```
+@misc{https://doi.org/10.5281/zenodo.12919127,
+  doi = {10.5281/ZENODO.12919127},
+  url = {https://zenodo.org/doi/10.5281/zenodo.12919127},
+  author = {Jeannin,  Chloé and Sch\"{a}tz,  Martin},
+  language = {en},
+  title = {vmcf-konfmi/YOLOBee: YOLOBee 1.0.0},
+  publisher = {Zenodo},
+  year = {2024},
+  copyright = {Affero General Public License v1.0 or later}
+}
+```
 
 ## Acknowledgements
 
