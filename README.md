@@ -74,7 +74,7 @@ Then, the frames need to be annotated. Indeed, to learn, the neural network need
 The next step is the training. This will train the neural network to recognize bees on images. 
 To launch a training it is better to be connected to a GPU, because it could not work or be very long using only the RAM of the system. The training is launched only by one code line (beginning with `!python train.py` ...). In this line of code, a lot of parameters can be changed if the user wants something specific (you can find them all on the Ultralytics website). However, some parameters need to remain, like img, batch, epochs, data, and weights. 
 
-- **img** is the size of the different images used for the training. Before going into the model, the images are sized to the dimension that has been put in parameters. If little objects want to be spotted, a higher resolution is necessary, so a bigger img.
+- **img** is the size of the different images used for the training. Before going into the model, the images are sized to the dimension that has been put in parameters. If little objects want to be spotted, a higher resolution is necessary, so a bigger img is needed.
 
 - **batch** is a parameter that defines the number of samples to work through before updating the model's weights. Using batch -1 will allow the biggest size of batch that your hardware can support.
 
