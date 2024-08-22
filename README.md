@@ -137,7 +137,7 @@ After training the neural network to recognize bees, the objective is to retrace
 
 https://github.com/user-attachments/assets/4846c61f-3bca-4d2d-a753-282aa09ea5f9
 
-We can see in this video that the bees are pretty well detected even if sometimes the algorithm does not recognize them. This could be because of the shadow or the flower sick. Indeed, both decrease the contrast between bees and the background, making the detection more complicated. This could be interesting either to change the color of the stick to a brighter color or to increase the dataset with more frames of bees in shadow or in front of a flower stick.
+We can see in this video that the bees are pretty well detected even if sometimes the algorithm does not recognize them. This could be because of the shadow or the flower stick. Indeed, both decrease the contrast between bees and the background, making the detection more complicated. This could be interesting either to change the color of the stick to a brighter color or to increase the dataset with more frames of bees in shadow or in front of a flower stick.
 With this detection, we did the tracking step again and the result was better. We can see the result below. This video can also be found in the folder videos.
 
 https://github.com/user-attachments/assets/5a769c93-d469-4d00-8f1d-b32abe34b3a1
